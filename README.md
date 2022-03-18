@@ -4,16 +4,16 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
 
 ## Table of contents
 
-  - [The challenge](#the-challenge)
-  - [Link](#link)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+- [The challenge](#the-challenge)
+- [Link](#link)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
 
 
 
 ### Link
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://daalu-stats-component-card.netlify.app
 
 
 ### Built with
