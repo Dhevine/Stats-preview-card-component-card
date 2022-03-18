@@ -25,6 +25,6 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
 
 ### What I learned
 
-- Learnt how to use add effects to image using CSS filter property and mix blend mode property
+- Learnt how to add effects to image using CSS filter property and mix blend mode property
 
 
