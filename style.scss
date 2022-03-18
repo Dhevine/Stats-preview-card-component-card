@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Public+Sans:ital,wght@1,900&display=swap");
+
+$main_background: hsl(233, 47%, 7%);
+$card_background: hsl(244, 38%, 16%);
+$accent: hsl(277, 64%, 61%);
+$white: hsl(0, 0%, 100%);
+$Slightly_transparent_white: hsla(0, 0%, 100%, 0.75);
+$stats_heading: hsla(0, 0%, 100%, 0.6);
+
+$font-stack: "Inter", sans-serif;
+
+@mixin animated($time){
+  animation: animate;
+  animation-duration: $time;
+  animation-timing-function: ease-in-out;
+
+  @keyframes animate {
+    0% {
+      transform: translateY(150px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  background-color: $main_background;
+}
+
+.main-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+  @include animated(.7s);
+}
+
+.image-container {
+  width: 100%;
+  position: relative;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: brightness(90%);
+  }
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: $accent;
+  opacity: 0.5;
+  mix-blend-mode: color;
+}
+
+.content_container {
+  background-color: $card_background;
+  padding: 1rem;
+  text-align: center;
+}
+
+.animate{
+  display: flex;
+  flex-direction: column;
+}
+
+.animate header, .body-text, .company__details{
+  margin-bottom: 1rem;
+}
+
+
+.title {
+  font-family: $font-stack;
+  color: $white;
+  font-size: 1.5rem;
+
+  & .highlight_text {
+    color: $accent;
+  }
+}
+
+.body-text {
+  color: $Slightly_transparent_white;
+  line-height: 1.3rem;
+  font-family: $font-stack;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.company__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  margin: 0.5rem 0;
+  color: $white;
+  font-size: 1.4rem;
+  font-family: $font-stack;
+
+  & span {
+    display: block;
+    color: $stats_heading;
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+  }
+
+  .main-container {
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .image-container {
+    grid-column: 2/3;
+  }
+
+  .content_container {
+    grid-area: 1/1/1/1;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .company__details {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .animate{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
